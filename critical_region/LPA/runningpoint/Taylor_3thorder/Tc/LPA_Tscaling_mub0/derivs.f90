@@ -817,6 +817,15 @@ subroutine derivs(x,y,dydx)
   open(unit=102,file='./buffer/kappa.dat')
   write(102, "(e20.9)")kappa*197.33**2
 
+  open(unit=103,file='./buffer/lam1.dat')
+  write(103, "(e20.9)")lam1*hc**2
+
+  open(unit=104,file='./buffer/lam2.dat')
+  write(104, "(e20.9)")lam2
+
+  open(unit=105,file='./buffer/lam3.dat')
+  write(105, "(e20.9)")lam3/hc**2
+
 
 100 continue
 
