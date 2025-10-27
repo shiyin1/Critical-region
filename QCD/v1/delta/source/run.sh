@@ -9,7 +9,7 @@ rm *.mod
 cd ..
 rm -rf data/*
 rm -rf Tem*
-for a in {1..40} 
+for a in {1..100} 
 do
 mkdir Tem$a
 cp -r exam/eqcd Tem$a
@@ -58,4 +58,64 @@ sh Tem37/run.sh &
 sh Tem38/run.sh &
 sh Tem39/run.sh &
 sh Tem40/run.sh &
+sh Tem41/run.sh &
+sh Tem42/run.sh &
+sh Tem43/run.sh &
+sh Tem44/run.sh &
+sh Tem45/run.sh &
+sh Tem46/run.sh &
+sh Tem47/run.sh &
+sh Tem48/run.sh &
+sh Tem49/run.sh &
+sh Tem50/run.sh &
+sh Tem51/run.sh &
+sh Tem52/run.sh &
+sh Tem53/run.sh &
+sh Tem54/run.sh &
+sh Tem55/run.sh &
+sh Tem56/run.sh &
+sh Tem57/run.sh &
+sh Tem58/run.sh &
+sh Tem59/run.sh &
+sh Tem60/run.sh &
+sh Tem61/run.sh &
+sh Tem62/run.sh &
+sh Tem63/run.sh &
+sh Tem64/run.sh &
+sh Tem65/run.sh &
+sh Tem66/run.sh &
+sh Tem67/run.sh &
+sh Tem68/run.sh &
+sh Tem69/run.sh &
+sh Tem70/run.sh &
+sh Tem71/run.sh &
+sh Tem72/run.sh &
+sh Tem73/run.sh &
+sh Tem74/run.sh &
+sh Tem75/run.sh &
+sh Tem76/run.sh &
+sh Tem77/run.sh &
+sh Tem78/run.sh &
+sh Tem79/run.sh &
+sh Tem80/run.sh &
+sh Tem81/run.sh &
+sh Tem82/run.sh &
+sh Tem83/run.sh &
+sh Tem84/run.sh &
+sh Tem85/run.sh &
+sh Tem86/run.sh &
+sh Tem87/run.sh &
+sh Tem88/run.sh &
+sh Tem89/run.sh &
+sh Tem90/run.sh &
+sh Tem91/run.sh &
+sh Tem92/run.sh &
+sh Tem93/run.sh &
+sh Tem94/run.sh &
+sh Tem95/run.sh &
+sh Tem96/run.sh &
+sh Tem97/run.sh &
+sh Tem98/run.sh &
+sh Tem99/run.sh &
+sh Tem100/run.sh &
 wait

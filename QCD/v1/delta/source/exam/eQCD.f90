@@ -44,7 +44,7 @@ PROGRAM EQCD
   DO I=1,1
     T=142.5841477Q+00
     !JL_UV=4.Q-3
-    JL_UV=exp((log(3.6Q+9)-log(4.Q-3))/40*J+log(4.Q-3))
+    JL_UV=exp((log(7.Q+9)-log(1.Q+0))/100*J+log(1.Q+0))
     MUB=MUBI
     MU=MUB/3.Q+0
 
