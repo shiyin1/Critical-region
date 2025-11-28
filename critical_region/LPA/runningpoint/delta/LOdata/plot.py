@@ -49,6 +49,7 @@ ax1.plot(mub650data[:,0],mub650data[:,1],'-',c='#6F8BB8',linewidth=2.5,alpha=1.,
 ax1.plot(mub700data[:,0],mub700data[:,1],'-',c='#59649D',linewidth=2.5,alpha=1.,label=r'$\mu_B=700\,\mathrm{MeV}$')
 ax1.plot([10**-4,10**4],[delta,delta],dashes=[2,1],color='gray',linewidth=1.,alpha=0.6)
 ax1.fill_between([10**-4,10**4],np.array([delta,delta])*0.99,np.array([delta,delta])*1.01,color='gray',edgecolor='none',alpha=0.3)
+ax1.fill_betweenx([0,10],[10**-6,10**-6],[0.01,0.01],color='red',edgecolor='none',alpha=0.3,zorder=10)
 #ax1.text(221,1.2,r'$\mu=290\,\mathrm{MeV}$',fontsize=10)
 ax1.set_xscale('log')
 ax1.axis([6*10**-3,500,3.0,6.0])
