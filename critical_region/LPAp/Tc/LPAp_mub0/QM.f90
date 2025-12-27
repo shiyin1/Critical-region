@@ -58,8 +58,10 @@ program QM
     !else
     !  cl=exp(log(tc1)-(log(tc1)-log(t2))/iTmax*real((i-1),kind=16))
     !end if
-    cl=8.Q-6/hc**3
-    T_MeV=103.934871!+dT*i
+    !cl=8.Q-6/hc**3
+    cl=1.Q-8/hc**3
+    !T_MeV=103.934871
+    T_MeV=103.934862
     T=T_MeV/hc
     
     muB=muBi
