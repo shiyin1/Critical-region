@@ -13,6 +13,9 @@ mpl.style.use('classic')
 
 # Data for plotting
 pb=np.loadtxt('./pb.dat')
+mub=np.loadtxt('./mub.dat')
+beta=np.loadtxt('./betaregion.dat')
+
 x = np.linspace(-2, 2, 100)
 y = np.linspace(-2, 2, 100)
 X, Y = np.meshgrid(x, y)
@@ -21,17 +24,20 @@ Z = X**2 + Y**2
 fig=plt.figure(figsize=(4.5, 3.5))
 #fig=plt.figure()
 ax1=fig.add_subplot(111, projection='3d')
-ax1.plot(pb[:,0],pb[:,1]*0,pb[:,1],'-',c='#F4DDB6',linewidth=2.5,alpha=1.,label=r'$\mu_B=0$')
-ax1.quiver(0, 0, pb[0,1], 0, 30, 0, arrow_length_ratio=0.2, color='b', linewidth=1.)
+ax1.plot(pb[:,0],pb[:,1]*0,pb[:,1],'-',c='b',linewidth=1.,alpha=1.,label=r'$\mu_B=0$')
+#ax1.plot(mub,mub*0,beta,'-',c='#F4DDB6',linewidth=2.5,alpha=1.,label=r'$\mu_B=0$')
+
+ax1.fill_between(mub, mub*0, beta ,mub,mub*0, pb[:,1], color='skyblue', alpha=0.5, edgecolor='none',zorder=0)  # 仍然是 2D
+ax1.quiver(0, 0, pb[0,1], 0, 30, 0, arrow_length_ratio=0.25, color='b', linewidth=1.)
 
 # 黑色主坐标轴（真实物理轴）
 ax1.quiver(0, 0, 0, 700, 0, 0, arrow_length_ratio=0.05, color='k', linewidth=1.5)
-ax1.quiver(0, 0, 0, 0, 50, 0, arrow_length_ratio=0.1, color='k', linewidth=1.5)
-ax1.quiver(0, 0, 0, 0, 0, 150, arrow_length_ratio=0.1, color='k', linewidth=1.5)
+ax1.quiver(0, 0, 0, 0, 50, 0, arrow_length_ratio=0.15, color='k', linewidth=1.5)
+ax1.quiver(0, 0, 0, 0, 0, 160, arrow_length_ratio=0.15, color='k', linewidth=1.5)
 
 ax1.set_xlim(0, 700)
 ax1.set_ylim(0, 50)
-ax1.set_zlim(0, 150)
+ax1.set_zlim(0, 160)
 
 ax1.view_init(elev=20, azim=-45)
 
