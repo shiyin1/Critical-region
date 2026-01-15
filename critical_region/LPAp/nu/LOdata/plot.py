@@ -35,7 +35,7 @@ ax1.set_xscale('log')
 ax1.axis([6*10**-6,0.03,0.6,0.95])
 
 ax1.set_xlabel(r'$t$', fontsize=14, color='black')
-ax1.set_ylabel(r'$\mathrm{Leading\,\,order\,\,Fit}\,\,\beta$', fontsize=14, color='black')
+ax1.set_ylabel(r'$\mathrm{Leading\,\,order\,\,Fit}\,\,\nu$', fontsize=14, color='black')
 
 ax1.legend(loc=0,fontsize=9.5,frameon=False,shadow=True,handlelength=3.,borderpad=0.5,borderaxespad=1,scatterpoints=1)
 
@@ -46,4 +46,4 @@ for label in ax1.yaxis.get_ticklabels():
 
 fig.subplots_adjust(top=0.9, bottom=0.14, left=0.145, right=0.95, hspace=0.35,wspace=0.35)
 
-fig.savefig("beta_LO.pdf")
+fig.savefig("nu_LO.pdf")

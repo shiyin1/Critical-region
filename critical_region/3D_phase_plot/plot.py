@@ -20,6 +20,8 @@ pb2=np.loadtxt('./pb2.dat')
 mub2=np.loadtxt('./mub2.dat')
 delta=np.loadtxt('./deltaregion.dat')
 
+nu=np.loadtxt('./nuregion.dat')
+
 # Create figure
 fig=plt.figure(figsize=(4.5, 3.5))
 #fig=plt.figure()
@@ -29,6 +31,7 @@ ax1.plot(pb[:,0],pb[:,1]*0-3*l,pb[:,1],'-',c='b',linewidth=1.,alpha=1.,label=r'$
 
 ax1.fill_between(mub, mub*0-3*l, beta ,mub,mub*0-3*l, pb[:,1], color='skyblue', alpha=0.5, edgecolor='none',zorder=0)  
 ax1.fill_between(mub2,delta*0-3*l, pb2[:,1],mub2, np.log(delta)*l, pb2[:,1] , color='#F4DDB6', alpha=0.5, edgecolor='none',zorder=0)  
+ax1.fill_between(mub2,delta*0, pb2[:,1], mub2, delta*0, nu , color="#EFA7BF", alpha=0.5, edgecolor='none',zorder=0)  
 ax1.quiver(0, 0-3*l, pb[0,1], 0, 6*l, 0, arrow_length_ratio=0.1, color='b', linewidth=1.)
 #黑色主坐标轴（真实物理轴）
 ax1.quiver(0, -3*l, 0, 700, 0, 0, arrow_length_ratio=0.05, color='k', linewidth=1.5)

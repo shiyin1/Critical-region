@@ -50,7 +50,7 @@ program QM
   lb_i=1.Q+0
 
   do i=1,1!iTmax
-    T_MeV=real(i,kind=16)*73.5Q+00
+    T_MeV=real(i,kind=16)*73.02Q+00
     cl=1.Q-6/hc**3
     T=T_MeV/hc
 
