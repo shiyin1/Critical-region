@@ -54,7 +54,7 @@ program QM
 
   do i=1,iTmax
     T_MeV=real(i,kind=16)
-    cl=1.Q-8/hc**3
+    cl=8.Q-6/hc**3
     T=T_MeV/hc
     
     muB=muBi+real(j,kind=16)*11.Q+00/hc

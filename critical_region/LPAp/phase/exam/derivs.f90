@@ -794,11 +794,12 @@ subroutine derivs(x,y,dydx)
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
-  L11Pion=(2*(b2f1aPion*(1 - etaphi/5.Q+0) + b1f2Pion*(1 - etapsi/4.Q+0)))/3.Q+0
-  L11Sigma=(2*(b2f1aSigma*(1 - etaphi/5.Q+0) + b1f2Sigma*(1 - etapsi/4.Q+0)))/3.Q+0
+  ! L11Pion=(2*(b2f1aPion*(1 - etaphi/5.Q+0) + b1f2Pion*(1 - etapsi/4.Q+0)))/3.Q+0
+  ! L11Sigma=(2*(b2f1aSigma*(1 - etaphi/5.Q+0) + b1f2Sigma*(1 - etapsi/4.Q+0)))/3.Q+0
 
-  dth=(etaphi/2.Q+0 + etapsi)*h + (((h**3*L11Sigma)/Nf -                           &
-       (h**3*L11Pion*(-1 + Nf**2))/Nf)*v3)/2.Q+0
+  ! dth=(etaphi/2.Q+0 + etapsi)*h + (((h**3*L11Sigma)/Nf -                           &
+  !      (h**3*L11Pion*(-1 + Nf**2))/Nf)*v3)/2.Q+0
+  dth=(etaphi/2.Q+0 + etapsi*0.)*h 
 
   dhdt=dth
 
@@ -810,7 +811,7 @@ subroutine derivs(x,y,dydx)
   dydx(6)=dlam6dt
   dydx(7)=dlam7dt
   dydx(Nv+1)=dlam0dt
-  dydx((Nv+1)+1)=0.!dhdt
+  dydx((Nv+1)+1)=dhdt
   dydx((Nv+1)+(Nh+1)+1)=dZphidt
   dydx((Nv+1)+(Nh+1)+2)=dZpsidt
   dydx((Nv+1)+(Nh+1)+Nz+1)=dcdt
