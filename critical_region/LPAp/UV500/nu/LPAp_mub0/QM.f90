@@ -49,11 +49,10 @@ program QM
   l_i=1.Q+0
   lb_i=1.Q+0
 
-  !Tc=103.934871
-  Tc=103.934871
+  Tc=110.018471Q+00
   tc1=-12.Q+00
   t2=-3.Q+00
-  cl=8.Q-6/hc**3
+  cl=1.Q-7/hc**3
   do i=1,iTmax
     if(i==1)then
       T_MeV=Tc

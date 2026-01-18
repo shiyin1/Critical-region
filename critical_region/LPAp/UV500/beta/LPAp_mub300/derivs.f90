@@ -114,8 +114,8 @@ subroutine derivs(x,y,dydx)
   mf2d1rho=h**2/(k**2*Nf)
 
   ms2o=ms2
-  if(abs(ms2-mp2)<1.d-10*(ms2+mp2)/2.)then
-    ms2=mp2+1.d-7*(ms2+mp2)/2.
+  if(abs(ms2-mp2)<1.d-9*(ms2+mp2)/2.)then
+    ms2=mp2+1.d-5*(ms2+mp2)/2.
   end if
 
 
@@ -197,223 +197,6 @@ subroutine derivs(x,y,dydx)
   nbd3xSigma=nbd3x
   nbd4xSigma=nbd4x
   nbd5xSigma=nbd5x
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-  p0=pi*T
- ! p0c=sqrt((pi*(T-1.Q+0/hc)*exp(-k/T/5.Q+0)+pi*1.Q+0/hc)**2+k**2)
-  p0c=pi*(T-1./hc)*exp(-k/(pi*T))+pi*1./hc
- ! p0c=p0
-
-  b2f1aPionC=-(k**2*(-((k*nbPion*(-mu0 + Complex(0,1)*p0 - (k*Sqrt(1 + mp2))/Sqrt(zb)))/  &
-          ((1 + mp2)*((-mu0 + Complex(0,1)*p0 -                                 &
-                  (k*Sqrt(1 + mp2))/Sqrt(zb))**2 - (k**2*(1 + mf2))/zf**2)      &
-**2)) - (k*nbd1xPion)/                                                          &
-        (2.Q+0*(1 + mp2)*((-mu0 + Complex(0,1)*p0 -                                &
-               (k*Sqrt(1 + mp2))/Sqrt(zb))**2 - (k**2*(1 + mf2))/zf**2)) +      &
-       (nbPion*Sqrt(zb))/                                                       &
-        (2.Q+0*(1 + mp2)**1.5Q+0*((-mu0 + Complex(0,1)*p0 -                           &
-               (k*Sqrt(1 + mp2))/Sqrt(zb))**2 - (k**2*(1 + mf2))/zf**2)) -      &
-       (k*(-mu0 + Complex(0,1)*p0c - (k*Sqrt(1 + mp2))/Sqrt(zb)))/              &
-        ((1 + mp2)*((-mu0 + Complex(0,1)*p0c -                                  &
-                (k*Sqrt(1 + mp2))/Sqrt(zb))**2 - (k**2*(1 + mf2))/zf**2)**2     &
-) + Sqrt(zb)/(2.Q+0*(1 + mp2)**1.5Q+0*                                                &
-          ((-mu0 + Complex(0,1)*p0c - (k*Sqrt(1 + mp2))/Sqrt(zb))**2 -          &
-            (k**2*(1 + mf2))/zf**2)) +                                          &
-       (k*nbPion*(-mu0 + Complex(0,1)*p0 + (k*Sqrt(1 + mp2))/Sqrt(zb)))/        &
-        ((1 + mp2)*((-mu0 + Complex(0,1)*p0 +                                   &
-                (k*Sqrt(1 + mp2))/Sqrt(zb))**2 - (k**2*(1 + mf2))/zf**2)**2     &
-) - (k*nbd1xPion)/                                                              &
-        (2.Q+0*(1 + mp2)*((-mu0 + Complex(0,1)*p0 +                                &
-               (k*Sqrt(1 + mp2))/Sqrt(zb))**2 - (k**2*(1 + mf2))/zf**2)) +      &
-       (nbPion*Sqrt(zb))/                                                       &
-        (2.Q+0*(1 + mp2)**1.5Q+0*((-mu0 + Complex(0,1)*p0 +                           &
-               (k*Sqrt(1 + mp2))/Sqrt(zb))**2 - (k**2*(1 + mf2))/zf**2)) -      &
-       (k**2*zf)/                                                               &
-        (Sqrt(1 + mf2)*zb*(-((k**2*(1 + mp2))/zb) +                             &
-             (-mu0 + Complex(0,1)*p0c + (k*Sqrt(1 + mf2))/zf)**2)**2) +         &
-       ((k**2*nfa*zf)/                                                          &
-           (Sqrt(1 + mf2)*zb*(-((k**2*(1 + mp2))/zb) +                          &
-                (-mu0 + Complex(0,1)*p0 - (k*Sqrt(1 + mf2))/zf)**2)**2) +       &
-          (k**2*nff*zf)/                                                        &
-           (Sqrt(1 + mf2)*zb*(-((k**2*(1 + mp2))/zb) +                          &
-                (mu0 + Complex(0,1)*p0 - (k*Sqrt(1 + mf2))/zf)**2)**2))/2.Q+0      &
-+ ((k**2*nff*zf)/                                                               &
-           (Sqrt(1 + mf2)*zb*(-((k**2*(1 + mp2))/zb) +                          &
-                (-mu0 + Complex(0,1)*p0 + (k*Sqrt(1 + mf2))/zf)**2)**2) +       &
-          (k**2*nfa*zf)/                                                        &
-           (Sqrt(1 + mf2)*zb*(-((k**2*(1 + mp2))/zb) +                          &
-                (mu0 + Complex(0,1)*p0 + (k*Sqrt(1 + mf2))/zf)**2)**2))/2.Q+0))/   &
-  (2.Q+0*zb*zf**2)
-
-
-  b2f1aPion=real(b2f1aPionC)
-  b2f1aPionI=aimag(b2f1aPionC)
-
-  b2f1aSigmaC=-(k**2*(-((k*nbSigma*(-mu0 + Complex(0,1)*p0 -                    &
-              (k*Sqrt(1 + ms2))/Sqrt(zb)))/                                     &
-          ((1 + ms2)*((-mu0 + Complex(0,1)*p0 -                                 &
-                  (k*Sqrt(1 + ms2))/Sqrt(zb))**2 - (k**2*(1 + mf2))/zf**2)      &
-**2)) - (k*nbd1xSigma)/                                                         &
-        (2.Q+0*(1 + ms2)*((-mu0 + Complex(0,1)*p0 -                                &
-               (k*Sqrt(1 + ms2))/Sqrt(zb))**2 - (k**2*(1 + mf2))/zf**2)) +      &
-       (nbSigma*Sqrt(zb))/                                                      &
-        (2.Q+0*(1 + ms2)**1.5Q+0*((-mu0 + Complex(0,1)*p0 -                           &
-               (k*Sqrt(1 + ms2))/Sqrt(zb))**2 - (k**2*(1 + mf2))/zf**2)) -      &
-       (k*(-mu0 + Complex(0,1)*p0c - (k*Sqrt(1 + ms2))/Sqrt(zb)))/              &
-        ((1 + ms2)*((-mu0 + Complex(0,1)*p0c -                                  &
-                (k*Sqrt(1 + ms2))/Sqrt(zb))**2 - (k**2*(1 + mf2))/zf**2)**2     &
-) + Sqrt(zb)/(2.Q+0*(1 + ms2)**1.5Q+0*                                                &
-          ((-mu0 + Complex(0,1)*p0c - (k*Sqrt(1 + ms2))/Sqrt(zb))**2 -          &
-            (k**2*(1 + mf2))/zf**2)) +                                          &
-       (k*nbSigma*(-mu0 + Complex(0,1)*p0 + (k*Sqrt(1 + ms2))/Sqrt(zb)))/       &
-        ((1 + ms2)*((-mu0 + Complex(0,1)*p0 +                                   &
-                (k*Sqrt(1 + ms2))/Sqrt(zb))**2 - (k**2*(1 + mf2))/zf**2)**2     &
-) - (k*nbd1xSigma)/                                                             &
-        (2.Q+0*(1 + ms2)*((-mu0 + Complex(0,1)*p0 +                                &
-               (k*Sqrt(1 + ms2))/Sqrt(zb))**2 - (k**2*(1 + mf2))/zf**2)) +      &
-       (nbSigma*Sqrt(zb))/                                                      &
-        (2.Q+0*(1 + ms2)**1.5Q+0*((-mu0 + Complex(0,1)*p0 +                           &
-               (k*Sqrt(1 + ms2))/Sqrt(zb))**2 - (k**2*(1 + mf2))/zf**2)) -      &
-       (k**2*zf)/                                                               &
-        (Sqrt(1 + mf2)*zb*(-((k**2*(1 + ms2))/zb) +                             &
-             (-mu0 + Complex(0,1)*p0c + (k*Sqrt(1 + mf2))/zf)**2)**2) +         &
-       ((k**2*nfa*zf)/                                                          &
-           (Sqrt(1 + mf2)*zb*(-((k**2*(1 + ms2))/zb) +                          &
-                (-mu0 + Complex(0,1)*p0 - (k*Sqrt(1 + mf2))/zf)**2)**2) +       &
-          (k**2*nff*zf)/                                                        &
-           (Sqrt(1 + mf2)*zb*(-((k**2*(1 + ms2))/zb) +                          &
-                (mu0 + Complex(0,1)*p0 - (k*Sqrt(1 + mf2))/zf)**2)**2))/2.Q+0     &
-+ ((k**2*nff*zf)/                                                               &
-           (Sqrt(1 + mf2)*zb*(-((k**2*(1 + ms2))/zb) +                          &
-                (-mu0 + Complex(0,1)*p0 + (k*Sqrt(1 + mf2))/zf)**2)**2) +       &
-          (k**2*nfa*zf)/                                                        &
-           (Sqrt(1 + mf2)*zb*(-((k**2*(1 + ms2))/zb) +                          &
-                (mu0 + Complex(0,1)*p0 + (k*Sqrt(1 + mf2))/zf)**2)**2))/2.Q+0))/   &
-  (2.Q+0*zb*zf**2)
-
-
-  b2f1aSigma=real(b2f1aSigmaC)
-  b2f1aSigmaI=aimag(b2f1aSigmaC)
-
-  b1f2PionC=-(k**2*((k*(-mu0 + Complex(0,1)*p0c + (k*Sqrt(1 + mf2))/zf))/       &
-        ((1 + mf2)*(-((k**2*(1 + mp2))/zb) +                                    &
-             (-mu0 + Complex(0,1)*p0c + (k*Sqrt(1 + mf2))/zf)**2)**2) -         &
-       (k**2*nbPion*Sqrt(zb))/                                                  &
-        (Sqrt(1 + mp2)*((-mu0 + Complex(0,1)*p0 -                               &
-                (k*Sqrt(1 + mp2))/Sqrt(zb))**2 - (k**2*(1 + mf2))/zf**2)**      &
-           2*zf**2) - (k**2*Sqrt(zb))/                                          &
-        (Sqrt(1 + mp2)*((-mu0 + Complex(0,1)*p0c -                              &
-                (k*Sqrt(1 + mp2))/Sqrt(zb))**2 - (k**2*(1 + mf2))/zf**2)**      &
-           2*zf**2) - (k**2*nbPion*Sqrt(zb))/                                   &
-        (Sqrt(1 + mp2)*((-mu0 + Complex(0,1)*p0 +                               &
-                (k*Sqrt(1 + mp2))/Sqrt(zb))**2 - (k**2*(1 + mf2))/zf**2)**      &
-           2*zf**2) + zf/                                                       &
-        (2.Q+0*(1 + mf2)**1.5Q+0*(-((k**2*(1 + mp2))/zb) +                            &
-            (-mu0 + Complex(0,1)*p0c + (k*Sqrt(1 + mf2))/zf)**2)) +             &
-       ((k*nfd1xa)/                                                             &
-           (2.Q+0*(1 + mf2)*(-((k**2*(1 + mp2))/zb) +                              &
-               (-mu0 + Complex(0,1)*p0 - (k*Sqrt(1 + mf2))/zf)**2)) +           &
-          (k*nfd1xf)/                                                           &
-           (2.Q+0*(1 + mf2)*(-((k**2*(1 + mp2))/zb) +                              &
-               (mu0 + Complex(0,1)*p0 - (k*Sqrt(1 + mf2))/zf)**2)) +            &
-          (k*nfa*(-mu0 + Complex(0,1)*p0 - (k*Sqrt(1 + mf2))/zf))/              &
-           ((1 + mf2)*(-((k**2*(1 + mp2))/zb) +                                 &
-                (-mu0 + Complex(0,1)*p0 - (k*Sqrt(1 + mf2))/zf)**2)**2) +       &
-          (k*nff*(mu0 + Complex(0,1)*p0 - (k*Sqrt(1 + mf2))/zf))/               &
-           ((1 + mf2)*(-((k**2*(1 + mp2))/zb) +                                 &
-                (mu0 + Complex(0,1)*p0 - (k*Sqrt(1 + mf2))/zf)**2)**2) -        &
-          (nfa*zf)/                                                             &
-           (2.Q+0*(1 + mf2)**1.5Q+0*                                                  &
-             (-((k**2*(1 + mp2))/zb) +                                          &
-               (-mu0 + Complex(0,1)*p0 - (k*Sqrt(1 + mf2))/zf)**2)) -           &
-          (nff*zf)/                                                             &
-           (2.Q+0*(1 + mf2)**1.5Q+0*                                                  &
-             (-((k**2*(1 + mp2))/zb) +                                          &
-               (mu0 + Complex(0,1)*p0 - (k*Sqrt(1 + mf2))/zf)**2)))/2.Q+0 +        &
-       ((k*nfd1xf)/                                                             &
-           (2.Q+0*(1 + mf2)*(-((k**2*(1 + mp2))/zb) +                              &
-               (-mu0 + Complex(0,1)*p0 + (k*Sqrt(1 + mf2))/zf)**2)) +           &
-          (k*nfd1xa)/                                                           &
-           (2.Q+0*(1 + mf2)*(-((k**2*(1 + mp2))/zb) +                              &
-               (mu0 + Complex(0,1)*p0 + (k*Sqrt(1 + mf2))/zf)**2)) -            &
-          (k*nff*(-mu0 + Complex(0,1)*p0 + (k*Sqrt(1 + mf2))/zf))/              &
-           ((1 + mf2)*(-((k**2*(1 + mp2))/zb) +                                 &
-                (-mu0 + Complex(0,1)*p0 + (k*Sqrt(1 + mf2))/zf)**2)**2) -       &
-          (k*nfa*(mu0 + Complex(0,1)*p0 + (k*Sqrt(1 + mf2))/zf))/               &
-           ((1 + mf2)*(-((k**2*(1 + mp2))/zb) +                                 &
-                (mu0 + Complex(0,1)*p0 + (k*Sqrt(1 + mf2))/zf)**2)**2) -        &
-          (nff*zf)/                                                             &
-           (2.Q+0*(1 + mf2)**1.5Q+0*                                                  &
-             (-((k**2*(1 + mp2))/zb) +                                          &
-               (-mu0 + Complex(0,1)*p0 + (k*Sqrt(1 + mf2))/zf)**2)) -           &
-          (nfa*zf)/                                                             &
-           (2.Q+0*(1 + mf2)**1.5*(-((k**2*(1 + mp2))/zb) +                         &
-               (mu0 + Complex(0,1)*p0 + (k*Sqrt(1 + mf2))/zf)**2)))/2.Q+0))/       &
-  (2.Q+0*zb*zf**2)
-
-
-  b1f2Pion=real(b1f2PionC)
-  b1f2PionI=aimag(b1f2PionC)
-
-  b1f2SigmaC=-(k**2*((k*(-mu0 + Complex(0,1)*p0c + (k*Sqrt(1 + mf2))/zf))/      &
-        ((1 + mf2)*(-((k**2*(1 + ms2))/zb) +                                    &
-             (-mu0 + Complex(0,1)*p0c + (k*Sqrt(1 + mf2))/zf)**2)**2) -         &
-       (k**2*nbSigma*Sqrt(zb))/                                                 &
-        (Sqrt(1 + ms2)*((-mu0 + Complex(0,1)*p0 -                               &
-                (k*Sqrt(1 + ms2))/Sqrt(zb))**2 - (k**2*(1 + mf2))/zf**2)**      &
-           2*zf**2) - (k**2*Sqrt(zb))/                                          &
-        (Sqrt(1 + ms2)*((-mu0 + Complex(0,1)*p0c -                              &
-                (k*Sqrt(1 + ms2))/Sqrt(zb))**2 - (k**2*(1 + mf2))/zf**2)**      &
-           2*zf**2) - (k**2*nbSigma*Sqrt(zb))/                                  &
-        (Sqrt(1 + ms2)*((-mu0 + Complex(0,1)*p0 +                               &
-                (k*Sqrt(1 + ms2))/Sqrt(zb))**2 - (k**2*(1 + mf2))/zf**2)**      &
-           2*zf**2) + zf/                                                       &
-        (2.Q+0*(1 + mf2)**1.5*(-((k**2*(1 + ms2))/zb) +                            &
-            (-mu0 + Complex(0,1)*p0c + (k*Sqrt(1 + mf2))/zf)**2)) +             &
-       ((k*nfd1xa)/                                                             &
-           (2.Q+0*(1 + mf2)*(-((k**2*(1 + ms2))/zb) +                              &
-               (-mu0 + Complex(0,1)*p0 - (k*Sqrt(1 + mf2))/zf)**2)) +           &
-          (k*nfd1xf)/                                                           &
-           (2.Q+0*(1 + mf2)*(-((k**2*(1 + ms2))/zb) +                              &
-               (mu0 + Complex(0,1)*p0 - (k*Sqrt(1 + mf2))/zf)**2)) +            &
-          (k*nfa*(-mu0 + Complex(0,1)*p0 - (k*Sqrt(1 + mf2))/zf))/              &
-           ((1 + mf2)*(-((k**2*(1 + ms2))/zb) +                                 &
-                (-mu0 + Complex(0,1)*p0 - (k*Sqrt(1 + mf2))/zf)**2)**2) +       &
-          (k*nff*(mu0 + Complex(0,1)*p0 - (k*Sqrt(1 + mf2))/zf))/               &
-           ((1 + mf2)*(-((k**2*(1 + ms2))/zb) +                                 &
-                (mu0 + Complex(0,1)*p0 - (k*Sqrt(1 + mf2))/zf)**2)**2) -        &
-          (nfa*zf)/                                                             &
-           (2.Q+0*(1 + mf2)**1.5Q+0*                                                  &
-             (-((k**2*(1 + ms2))/zb) +                                          &
-               (-mu0 + Complex(0,1)*p0 - (k*Sqrt(1 + mf2))/zf)**2)) -           &
-          (nff*zf)/                                                             &
-           (2.Q+0*(1 + mf2)**1.5Q+0*                                                  &
-             (-((k**2*(1 + ms2))/zb) +                                          &
-               (mu0 + Complex(0,1)*p0 - (k*Sqrt(1 + mf2))/zf)**2)))/2.Q+0 +        &
-       ((k*nfd1xf)/                                                             &
-           (2.Q+0*(1 + mf2)*(-((k**2*(1 + ms2))/zb) +                              &
-               (-mu0 + Complex(0,1)*p0 + (k*Sqrt(1 + mf2))/zf)**2)) +           &
-          (k*nfd1xa)/                                                           &
-           (2.Q+0*(1 + mf2)*(-((k**2*(1 + ms2))/zb) +                              &
-               (mu0 + Complex(0,1)*p0 + (k*Sqrt(1 + mf2))/zf)**2)) -            &
-          (k*nff*(-mu0 + Complex(0,1)*p0 + (k*Sqrt(1 + mf2))/zf))/              &
-           ((1 + mf2)*(-((k**2*(1 + ms2))/zb) +                                 &
-                (-mu0 + Complex(0,1)*p0 + (k*Sqrt(1 + mf2))/zf)**2)**2) -       &
-          (k*nfa*(mu0 + Complex(0,1)*p0 + (k*Sqrt(1 + mf2))/zf))/               &
-           ((1 + mf2)*(-((k**2*(1 + ms2))/zb) +                                 &
-                (mu0 + Complex(0,1)*p0 + (k*Sqrt(1 + mf2))/zf)**2)**2) -        &
-          (nff*zf)/                                                             &
-           (2.Q+0*(1 + mf2)**1.5Q+0*                                                  &
-             (-((k**2*(1 + ms2))/zb) +                                          &
-               (-mu0 + Complex(0,1)*p0 + (k*Sqrt(1 + mf2))/zf)**2)) -           &
-          (nfa*zf)/                                                             &
-           (2.Q+0*(1 + mf2)**1.5Q+0*(-((k**2*(1 + ms2))/zb) +                         &
-               (mu0 + Complex(0,1)*p0 + (k*Sqrt(1 + mf2))/zf)**2)))/2.Q+0))/       &
-  (2.Q+0*zb*zf**2)
-
-
-  b1f2Sigma=real(b1f2SigmaC)
-  b1f2SigmaI=aimag(b1f2SigmaC)
-
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
   ! etaphi=-((f2a*h**2*Nc*v3 - (8*f3a*h**2*Nc*v3)/3.Q+0 -                            &
@@ -442,8 +225,8 @@ subroutine derivs(x,y,dydx)
   dcdt=(1.Q+0/2.Q+0)*etaphi*c
   dkappadt=-etaphi*kappa
 
-  !ms2=ms2o
-
+  dth=(1.Q+0/2.Q+0)*etaphi*h 
+  dhdt=dth
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   dr0dtV=(k**4*v3*((2*(1 - etaphi/5.Q+0)*(0.5Q+0 + nbSigma))/(3.Q+0*Sqrt(1 + ms2)*Sqrt(zb)) +   &
@@ -797,13 +580,13 @@ subroutine derivs(x,y,dydx)
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
-  L11Pion=(2*(b2f1aPion*(1 - etaphi/5.Q+0) + b1f2Pion*(1 - etapsi/4.Q+0)))/3.Q+0
-  L11Sigma=(2*(b2f1aSigma*(1 - etaphi/5.Q+0) + b1f2Sigma*(1 - etapsi/4.Q+0)))/3.Q+0
+  ! L11Pion=(2*(b2f1aPion*(1 - etaphi/5.Q+0) + b1f2Pion*(1 - etapsi/4.Q+0)))/3.Q+0
+  ! L11Sigma=(2*(b2f1aSigma*(1 - etaphi/5.Q+0) + b1f2Sigma*(1 - etapsi/4.Q+0)))/3.Q+0
 
-  dth=(etaphi/2.Q+0 + etapsi)*h + (((h**3*L11Sigma)/Nf -                           &
-       (h**3*L11Pion*(-1 + Nf**2))/Nf)*v3)/2.Q+0
+  ! dth=(etaphi/2.Q+0 + etapsi)*h + (((h**3*L11Sigma)/Nf -                           &
+  !      (h**3*L11Pion*(-1 + Nf**2))/Nf)*v3)/2.Q+0
 
-  dhdt=dth
+  ! dhdt=dth
 
   dydx(1)=dlam1dt
   dydx(2)=dlam2dt
@@ -813,7 +596,7 @@ subroutine derivs(x,y,dydx)
   dydx(6)=dlam6dt
   dydx(7)=dlam7dt
   dydx(Nv+1)=dlam0dt
-  dydx((Nv+1)+1)=0.!dhdt
+  dydx((Nv+1)+1)=dhdt
   dydx((Nv+1)+(Nh+1)+1)=dZphidt
   dydx((Nv+1)+(Nh+1)+2)=dZpsidt
   dydx((Nv+1)+(Nh+1)+Nz+1)=dcdt

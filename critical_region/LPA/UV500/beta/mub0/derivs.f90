@@ -431,9 +431,6 @@ subroutine derivs(x,y,dydx)
   dcdt=(1.Q+0/2.Q+0)*etaphi*c
   dkappadt=-etaphi*kappa
 
-
-
-
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   dr0dtV=(k**4*v3*((2*(1 - etaphi/5.Q+0)*(0.5Q+0 + nbSigma))/(3.Q+0*Sqrt(1 + ms2)*Sqrt(zb)) +   &
       (2*(1 - etaphi/5.Q+0)*(0.5Q+0 + nbPion)*(-1 + Nf**2))/                          &

@@ -442,8 +442,19 @@ subroutine derivs(x,y,dydx)
   dcdt=(1.Q+0/2.Q+0)*etaphi*c
   dkappadt=-etaphi*kappa
 
-  !ms2=ms2o
+  dth=(1.Q+0/2.Q+0)*etaphi*h 
+  dhdt=dth
 
+   ms2=ms2o
+
+   nb=Fnb((k*Sqrt(1 + ms2))/Sqrt(zb),T)
+   call nbdx(nb,nbd0x,nbd1x,nbd2x,nbd3x,nbd4x,nbd5x)
+   nbSigma=nbd0x
+   nbd1xSigma=nbd1x
+   nbd2xSigma=nbd2x
+   nbd3xSigma=nbd3x
+   nbd4xSigma=nbd4x
+   nbd5xSigma=nbd5x
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   dr0dtV=(k**4*v3*((2*(1 - etaphi/5.Q+0)*(0.5Q+0 + nbSigma))/(3.Q+0*Sqrt(1 + ms2)*Sqrt(zb)) +   &
@@ -797,13 +808,13 @@ subroutine derivs(x,y,dydx)
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
-  L11Pion=(2*(b2f1aPion*(1 - etaphi/5.Q+0) + b1f2Pion*(1 - etapsi/4.Q+0)))/3.Q+0
-  L11Sigma=(2*(b2f1aSigma*(1 - etaphi/5.Q+0) + b1f2Sigma*(1 - etapsi/4.Q+0)))/3.Q+0
+  ! L11Pion=(2*(b2f1aPion*(1 - etaphi/5.Q+0) + b1f2Pion*(1 - etapsi/4.Q+0)))/3.Q+0
+  ! L11Sigma=(2*(b2f1aSigma*(1 - etaphi/5.Q+0) + b1f2Sigma*(1 - etapsi/4.Q+0)))/3.Q+0
 
-  dth=(etaphi/2.Q+0 + etapsi)*h + (((h**3*L11Sigma)/Nf -                           &
-       (h**3*L11Pion*(-1 + Nf**2))/Nf)*v3)/2.Q+0
+  ! dth=(etaphi/2.Q+0 + etapsi)*h + (((h**3*L11Sigma)/Nf -                           &
+  !      (h**3*L11Pion*(-1 + Nf**2))/Nf)*v3)/2.Q+0
 
-  dhdt=dth
+  ! dhdt=dth
 
   dydx(1)=dlam1dt
   dydx(2)=dlam2dt
@@ -813,7 +824,7 @@ subroutine derivs(x,y,dydx)
   dydx(6)=dlam6dt
   dydx(7)=dlam7dt
   dydx(Nv+1)=dlam0dt
-  dydx((Nv+1)+1)=0.!dhdt
+  dydx((Nv+1)+1)=dhdt
   dydx((Nv+1)+(Nh+1)+1)=dZphidt
   dydx((Nv+1)+(Nh+1)+2)=dZpsidt
   dydx((Nv+1)+(Nh+1)+Nz+1)=dcdt

@@ -114,8 +114,8 @@ subroutine derivs(x,y,dydx)
   mf2d1rho=h**2/(k**2*Nf)
 
   ms2o=ms2
-  if(abs(ms2-mp2)<1.d-10*(ms2+mp2)/2.)then
-    ms2=mp2+1.d-7*(ms2+mp2)/2.
+  if(abs(ms2-mp2)<1.d-9*(ms2+mp2)/2.)then
+    ms2=mp2+1.d-5*(ms2+mp2)/2.
   end if
 
 

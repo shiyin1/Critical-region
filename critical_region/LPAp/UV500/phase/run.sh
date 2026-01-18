@@ -8,7 +8,7 @@ rm *.o
 cd ..
 rm -rf data/*
 rm -rf Tem*
-for a in {1..60} 
+for a in {1..50} 
 do
 mkdir Tem$a
 cp -r exam/exe Tem$a
@@ -67,14 +67,4 @@ sh Tem47/run.sh &
 sh Tem48/run.sh &
 sh Tem49/run.sh &
 sh Tem50/run.sh &
-sh Tem51/run.sh &
-sh Tem52/run.sh &
-sh Tem53/run.sh &
-sh Tem54/run.sh &
-sh Tem55/run.sh &
-sh Tem56/run.sh &
-sh Tem57/run.sh &
-sh Tem58/run.sh &
-sh Tem59/run.sh &
-sh Tem60/run.sh &
 wait

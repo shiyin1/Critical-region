@@ -60,7 +60,7 @@ program QM
     !end if
     !cl=8.Q-6/hc**3
     cl=1.Q-7/hc**3
-    T_MeV=110.0184745
+    T_MeV=110.0184745Q+00
     T=T_MeV/hc
     
     muB=muBi

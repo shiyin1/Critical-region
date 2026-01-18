@@ -25,12 +25,14 @@ subroutine initial(Nflow,yflow,kappa)
   Nck=N_str(4)
 
   lambda=5.7Q+0
-  nu=(695.Q+0/hc)**2
+  nu=(890.Q+0/hc)**2
+  h=11.22Q+0
+  c=2.95Q-3*(1000.Q+0/hc)**3  !explicit chiral symmetry breaking term, in unit of fm**(-3)
 
-  h=6.54Q+0
-!expansion coefficients of Yukawa coupling
-
-  c=cl!2.5Q-3*(1000.Q+0/hc)**3  !explicit chiral symmetry breaking term, in unit of fm**(-3)
+  lambda=5.7Q+0
+  nu=(384.Q+0/hc)**2
+  h=7.81Q+0
+  c=cl!2.1Q-3*(1000.Q+0/hc)**3  !explicit chiral symmetry breaking term, in unit of fm**(-3)
 
   kappa=((-2*nu)/lambda + (2**0.6666666666666666*nu**2)/                       &
      (27*c**2*lambda**4 + 4*lambda**3*nu**3 +                                  &

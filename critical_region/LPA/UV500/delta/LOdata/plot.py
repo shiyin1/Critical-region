@@ -30,7 +30,7 @@ ax1.plot(mub600data[:,0],mub600data[:,1],'-',c='#9C9CC0',linewidth=2.5,alpha=1.,
 ax1.plot([10**-4,10**4],[delta,delta],dashes=[2,1],color='gray',linewidth=1.,alpha=0.6)
 ax1.fill_between([10**-4,10**4],np.array([delta,delta])*0.99,np.array([delta,delta])*1.01,color='gray',edgecolor='none',alpha=0.3)
 ax1.fill_betweenx([0,10],[10**-6,10**-6],[0.002,0.002],color='red',edgecolor='none',alpha=0.3,zorder=10)
-#ax1.text(221,1.2,r'$\mu=290\,\mathrm{MeV}$',fontsize=10)
+ax1.text(3*10**-3,4.4,r'$\mathrm{LPA}$',fontsize=15)
 ax1.set_xscale('log')
 ax1.axis([3*10**-4,500,3.0,6.1])
 

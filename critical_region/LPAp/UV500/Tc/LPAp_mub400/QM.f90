@@ -49,7 +49,7 @@ program QM
   l_i=1.Q+0
   lb_i=1.Q+0
 
-  Tc=104.1Q+00
+  !Tc=104.1Q+00
   !tc1=8.Q-6/hc**3
   !t2=5.Q+00
   do i=1,1!iTmax
@@ -58,8 +58,9 @@ program QM
     !else
     !  cl=exp(log(tc1)-(log(tc1)-log(t2))/iTmax*real((i-1),kind=16))
     !end if
-    cl=8.Q-6/hc**3
-    T_MeV=76.5526313
+    !cl=8.Q-6/hc**3
+    cl=1.Q-8/hc**3
+    T_MeV=81.769928Q+00
     T=T_MeV/hc
     
     muB=muBi

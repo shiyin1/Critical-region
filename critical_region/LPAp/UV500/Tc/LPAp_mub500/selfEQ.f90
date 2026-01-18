@@ -209,7 +209,7 @@ subroutine selfEQ(kappa_UV_i,l_i,lb_i,kappa_UV,l,lb,rho0,mPion,mSigma,mf,Vtotal,
 
     x(1)=l_com
     x(2)=lb_com
-    call newt(x, nn, check, PolyakovEq)
+    !call newt(x, nn, check, PolyakovEq)
     l_new=1.Q+0!x(1)
     lb_new=1.Q+0!x(2)
 

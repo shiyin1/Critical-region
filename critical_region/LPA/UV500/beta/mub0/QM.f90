@@ -54,7 +54,7 @@ program QM
   l_i=1.Q+0
   lb_i=1.Q+0
 
-  Tc=118.719268Q+00
+  Tc=118.719248Q+00
   tc1=-12.Q+00
   t2=-2.Q+00
   do i=1,iTmax

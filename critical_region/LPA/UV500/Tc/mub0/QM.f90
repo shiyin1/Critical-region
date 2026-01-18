@@ -64,7 +64,7 @@ program QM
     ! else
     !   T_MeV=Tc-exp((tc1)+((-tc1)-(-t2))/iTmax*real((i-1),kind=16))*Tc
     ! end if
-    T_MeV=118.719248
+    T_MeV=118.719248Q+00
     cl=1.Q-8/hc**3
     T=T_MeV/hc
     

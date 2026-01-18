@@ -49,7 +49,7 @@ program QM
   l_i=1.Q+0
   lb_i=1.Q+0
 
-  Tc=76.5526313
+  Tc=81.769928Q+00
   tc1=8.Q-6/hc**3
   t2=11.Q+00
   do i=1,iTmax

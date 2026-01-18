@@ -31,12 +31,13 @@ ax1.plot([10**-12,10**4],[beta,beta],dashes=[2,1],color='gray',linewidth=1.,alph
 ax1.fill_between([10**-12,10**4],np.array([beta,beta])*0.99,np.array([beta,beta])*1.01,color='gray',edgecolor='none',alpha=0.3)
 ax1.fill_betweenx([0,1],[4*10**-6,4*10**-6],[0.01/700,0.01/700],color='red',edgecolor='none',alpha=0.3,zorder=10)
 ax1.set_xscale('log')
-ax1.axis([6*10**-6,0.1,0.33,0.42])
+ax1.text(3*10**-5,0.38,r'$\mathrm{LPA}$',fontsize=15)
+ax1.axis([6*10**-6,0.03,0.33,0.42])
 
 ax1.set_xlabel(r'$t$', fontsize=14, color='black')
 ax1.set_ylabel(r'$\mathrm{Leading\,\,order\,\,Fit}\,\,\beta$', fontsize=14, color='black')
 
-ax1.legend(loc=0,fontsize=9.5,frameon=False,shadow=True,handlelength=3.,borderpad=0.5,borderaxespad=1,scatterpoints=1)
+ax1.legend(loc=0,bbox_to_anchor=(0.1, 0.5),fontsize=9.5,frameon=False,shadow=True,handlelength=3.,borderpad=0.5,borderaxespad=1,scatterpoints=1)
 
 for label in ax1.xaxis.get_ticklabels():
     label.set_fontsize(10)
