@@ -16,6 +16,8 @@ mub0data=np.loadtxt('./mub0.dat')
 mub300data=np.loadtxt('./mub300.dat')
 mub400data=np.loadtxt('./mub400.dat')
 mub500data=np.loadtxt('./mub500.dat')
+mub550data=np.loadtxt('./mub550.dat')
+mub575data=np.loadtxt('./mub575.dat')
 mub600data=np.loadtxt('./mub600.dat')
 delta=0.8043
 # Create figure
@@ -26,18 +28,20 @@ ax1.plot(np.exp(mub0data[:,0]),mub0data[:,1],'-',c='#F4DDB6',linewidth=2.5,alpha
 ax1.plot(np.exp(mub300data[:,0]),mub300data[:,1],'-',c='#F5CABC',linewidth=2.5,alpha=1.,label=r'$\mu_B=300\,\mathrm{MeV}$')
 ax1.plot(np.exp(mub400data[:,0]),mub400data[:,1],'-',c='#F4B4BE',linewidth=2.5,alpha=1.,label=r'$\mu_B=400\,\mathrm{MeV}$')
 ax1.plot(np.exp(mub500data[:,0]),mub500data[:,1],'-',c='#CEA2B5',linewidth=2.5,alpha=1.,label=r'$\mu_B=500\,\mathrm{MeV}$')
-ax1.plot(np.exp(mub600data[:,0]),mub600data[:,1],'-',c='#9C9CC0',linewidth=2.5,alpha=1.,label=r'$\mu_B=600\,\mathrm{MeV}$')
+ax1.plot(np.exp(mub550data[:,0]),mub550data[:,1],'-',c='#9C9CC0',linewidth=2.5,alpha=1.,label=r'$\mu_B=550\,\mathrm{MeV}$')
+ax1.plot(np.exp(mub575data[:,0]),mub575data[:,1],'-',c='#6F8BB8',linewidth=2.5,alpha=1.,label=r'$\mu_B=575\,\mathrm{MeV}$')
+ax1.plot(np.exp(mub600data[:,0]),mub600data[:,1],'-',c='#59649D',linewidth=2.5,alpha=1.,label=r'$\mu_B=600\,\mathrm{MeV}$')
 ax1.plot([10**-6,10**4],[delta,delta],dashes=[2,1],color='gray',linewidth=1.,alpha=0.6)
 ax1.fill_between([10**-6,10**4],np.array([delta,delta])*0.99,np.array([delta,delta])*1.01,color='gray',edgecolor='none',alpha=0.3)
 ax1.fill_betweenx([0,1],[10**-6,10**-6],[0.01/700,0.01/700],color='red',edgecolor='none',alpha=0.3,zorder=10)
 ax1.text(2*10**-5,0.74,r'$\mathrm{LPA}$',fontsize=15)
 ax1.set_xscale('log')
-ax1.axis([6*10**-6,2*10**-2,0.6,0.87])
+ax1.axis([6*10**-6,2*10**-2,0.55,0.87])
 
 ax1.set_xlabel(r'$t$', fontsize=14, color='black')
 ax1.set_ylabel(r'$\mathrm{Leading\,\,order\,\,Fit}\,\,\nu$', fontsize=14, color='black')
 
-ax1.legend(loc=0,bbox_to_anchor=(0.55, 0.5),fontsize=9.5,frameon=False,shadow=True,handlelength=3.,borderpad=0.5,borderaxespad=1,scatterpoints=1)
+ax1.legend(loc=(0.1,0.01),fontsize=9.5,frameon=False,shadow=True,handlelength=3.,borderpad=0.5,borderaxespad=1,scatterpoints=1)
 
 for label in ax1.xaxis.get_ticklabels():
     label.set_fontsize(10)
