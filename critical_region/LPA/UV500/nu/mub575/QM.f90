@@ -54,7 +54,7 @@ program QM
   l_i=1.Q+0
   lb_i=1.Q+0
 
-  Tc=65.428702Q+00
+  Tc=65.428706Q+00
   tc1=-12.Q+00
   t2=-3.Q+00
   do i=1,iTmax
@@ -63,7 +63,7 @@ program QM
     else
       T_MeV=Tc+exp((tc1)+((-tc1)-(-t2))/iTmax*real((i-1),kind=16))*Tc
     end if
-    cl=8.Q-6/hc**3
+    cl=5.Q-6/hc**3
     T=T_MeV/hc
     
     muB=muBi

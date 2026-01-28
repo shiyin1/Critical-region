@@ -32,8 +32,8 @@ ax1.plot(mub,delta0p03,'-',c='#C5DAEE',linewidth=1.5,alpha=1.,label=r'$\mathrm{S
 #ax1.fill_betweenx([0,200],[600,600],[1000,1000],color='gray',edgecolor='none',alpha=0.3,zorder=10)
 #ax1.plot(pb2nd[:,0],pb2nd[:,1]-0.5,'-',c='k',linewidth=1.5,alpha=1.,label=r'$\mathrm{2nd-Phase\;boundary}$')
 ax1.set_yscale('log')
-ax1.text(270,30,r'$\mathrm{LPA}^\prime$',fontsize=15)
-ax1.axis([0,600,10**-2,100])
+ax1.text(240,30,r'$\mathrm{LPA}^\prime$',fontsize=15)
+ax1.axis([0,530,10**-2,90])
 ax1.set_xlabel(r'$\mu_B\,[\mathrm{MeV}]$', fontsize=14, color='black')
 ax1.set_ylabel(r'$m_\pi\,[\mathrm{MeV}]$', fontsize=14, color='black')
 

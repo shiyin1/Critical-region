@@ -11,7 +11,7 @@ SUBROUTINE odeint(ystart,nvar,x1,x2,eps,h1,hmin,nok,nbad,derivs,rkqs)
   INTEGER nbad,nok,nvar,KMAXX,MAXSTP,NMAX
   real(16) eps,h1,hmin,x1,x2,ystart(nvar),TINY
   EXTERNAL derivs,rkqs
-  PARAMETER (MAXSTP=100000,NMAX=50,KMAXX=2000,TINY=1.Q-30)
+  PARAMETER (MAXSTP=10000000,NMAX=50,KMAXX=2000,TINY=1.Q-30)
   INTEGER i,kmax,kount,nstp
   real(16) dxsav,h,hdid,hnext,x,xsav,dydx(NMAX),xp(KMAXX),y(NMAX),yp(NMAX,KMAXX),yscal(NMAX)
   COMMON /path/ kmax,kount,dxsav,xp,yp

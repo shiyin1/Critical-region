@@ -63,7 +63,7 @@ program QM
     else
       T_MeV=Tc+exp((tc1)+((-tc1)-(-t2))/iTmax*real((i-1),kind=16))*Tc
     end if
-    cl=5.Q-6/hc**3
+    cl=4.Q-7/hc**3
     T=T_MeV/hc
     
     muB=muBi

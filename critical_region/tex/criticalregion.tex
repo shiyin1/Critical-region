@@ -262,23 +262,23 @@ To solve the effective action at infrared energy scale, we have to introduce the
 %
 %%%%
 \begin{align}\label{eq:wetterich_eq}
-\partial_t\Gamma_k[b,q,\bar q]=\frac{1}{2}\mathrm{Tr}\bigg(G^{bb}_{k}\partial_t R^b_{k}\bigg)-\mathrm{Tr}\bigg(G^{q\bar q}_{k}\partial_t R^q_{k}\bigg)\,.
+\partial_t\Gamma_k[\phi,q,\bar q]=\frac{1}{2}\mathrm{Tr}\bigg(G^{\phi\phi}_{k}\partial_t R^\phi_{k}\bigg)-\mathrm{Tr}\bigg(G^{q\bar q}_{k}\partial_t R^q_{k}\bigg)\,.
 \end{align}
 %%%%
 %
-In order to preserve the dimensional consistency of the equations, we use the renormalization group (RG) time $t=\mathrm{ln(k/\Lambda)}$. Here $\Lambda$ gives us the ultraviolet (UV) scale of our current theory, we set it to 700 MeV in this work. The index $b$ and $q$ stand for the boson and quark d.o.f. in our system, then we have $b=(\sigma, \pi)$. The trace is performed on all the intrinsic degrees of freedom, e.g., flavor, color and Lorentz space. The $G^{bb/q\bar{q}}_k$ is the propagator and the $R^{b/q}_k$ is the regulator of meson/quark, the definitions of them are given in \cref{app:flow_eq}.
+In order to preserve the dimensional consistency of the equations, we use the renormalization group (RG) time $t=\mathrm{ln(k/\Lambda)}$. Here $\Lambda$ gives us the ultraviolet (UV) scale of our current theory, we set it to 700 MeV in this work. The index $b$ and $q$ stand for the boson and quark d.o.f. in our system, then we have $\phi=(\sigma, \pi)$. The trace is performed on all the intrinsic degrees of freedom, e.g., flavor, color and Lorentz space. The $G^{\phi\phi/q\bar{q}}_k$ is the propagator and the $R^{\phi/q}_k$ is the regulator of meson/quark, the definitions of them are given in \cref{app:flow_eq}.
 
 We start the flow equation of the effective potential
 %
 %%%%
 \begin{align}\label{eq:u_flow}
-\partial_t U_k(\rho)=&\frac{k^4}{4\pi^2}\bigg[(N_f^2-1)l^{(b,4)}_0(m^2_{\pi,k},\eta_{\phi,k};T)\nonumber\\[2ex]
-&+l^{(b,4)}_0(m^2_{\sigma,k},\eta_{\phi,k};T)\nonumber\\[2ex]
+\partial_t U_k(\rho)=&\frac{k^4}{4\pi^2}\bigg[(N_f^2-1)l^{(\phi,4)}_0(m^2_{\pi,k},\eta_{\phi,k};T)\nonumber\\[2ex]
+&+l^{(\phi,4)}_0(m^2_{\sigma,k},\eta_{\phi,k};T)\nonumber\\[2ex]
 &-4N_cN_fl^{(q,4)}_0(m^2_{q,k};T,\mu)\bigg]
 \end{align}
 %%%%
 %
-The $l^{(b/q,4)}_0$ is the threshold function of a bosonic field or a quark field, the expression is also given in \cref{app:flow_eq}. In addition, they are all the functions of meson mass or quark mass. Then the dimensionless masses are defined by
+The $l^{(\phi/q,4)}_0$ is the threshold function of a bosonic field or a quark field, the expression is also given in \cref{app:flow_eq}. In addition, they are all the functions of meson mass or quark mass. Then the dimensionless masses are defined by
 %
 %%%%
 \begin{align}
@@ -444,8 +444,9 @@ We can see from the equation above, in the critical region, the critical exponen
 
 In \Fig{fig:h_scaling}, we demonstrate the inverse of the slope of the data as functions of pion mass at different baryon chemical potentials for both LPA and LPA'. The red band gives us the unreliable region of the data. In this region the pion mass is smaller than the infrared cutoff $k_{\mathrm{IR}}$ used in the calculation, causing the data to fall outside the range of numerical accuracy. We can see that, in the small pion mass region, the fitted slope exhibits a plateau at the value corresponding to the critical exponent $\delta$. We get the critical exponent $\delta_{\mathrm{LPA}}\simeq5.00$ and $\delta_{\mathrm{LPA}'}\simeq4.79$. For zero chemical potential, the results start to deviate from the $1\%$ vicinity of the critical exponent at the pion mass below 10 MeV, which is consistent with the QCD fits including subleading contributions \cite{Braun:2023qak}. It then exhibits a peak and rapidly decreases as the mass increases.
 
-At high chemical potential, the data gradually change from an upward deviation to a downward deviation. In other words, the range over which the slope agrees with the critical exponent first increases and then decreases. At very high chemical potential, the LPA fit quickly deviates from the critical exponent, while the LPA' fit deviates slightly more slowly, however, the overall behavior remains similar to that of LPA.
+At high chemical potential, the data gradually change from an upward deviation to a downward deviation. In other words, the range over which the slope agrees with the critical exponent first increases and then decreases. At very high chemical potential, the LPA fit quickly deviates from the critical exponent, while the LPA' fit deviates slightly more slowly, however, the overall behavior remains similar to that of LPA. The maximal chemical potentials considered in the two approximations are not the same. This is because the phase structure in the chiral limit differs between the two approximations. In the LPA', the tricritical point is located at a smaller chemical potential, and therefore the calculations within this approximation are terminated at a lower chemical potential.
 
+It should be emphasized that results obtained in the region where the pion mass is smaller than the infrared RG-scale cannot be considered reliable. This is because, in this region, the parameters lie beyond the range of control of the fRG calculation, and it can no longer be guaranteed that the system remains at the WF fixed point. Therefore, in the figures we highlight this region in red to guide the reader.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 \subsection{Lower temperature direction}
@@ -551,7 +552,7 @@ In the computation of the flow equations, we use the 3d-flat Litim regulator fun
 %
 %%%%
 \begin{align}
-R^b_k(\mathbf{q})&=Z_{\phi,k}\,\mathbf{q}^2\,r_b(\mathbf{q}^2/k^2)\,,\\[2ex]
+R^\phi_k(\mathbf{q})&=Z_{\phi,k}\,\mathbf{q}^2\,r_\phi(\mathbf{q}^2/k^2)\,,\\[2ex]
 R^q_k(\mathbf{q})&=Z_{q,k}\,i\,\bm{\slashed{q}}\,r_f(\mathbf{q}^2/k^2)\,.
 \end{align}
 %%%%
@@ -560,7 +561,7 @@ The shape function is defined by the Heaviside theta function
 %
 %%%%
 \begin{align}
-r_b(x)&=\bigg(\frac{1}{x}-1\bigg)\Theta(1-x)\,,\\[2ex]
+r_\phi(x)&=\bigg(\frac{1}{x}-1\bigg)\Theta(1-x)\,,\\[2ex]
 r_f(x)&=\bigg(\frac{1}{\sqrt x}-1\bigg)\Theta(1-x)\,.
 \end{align}
 %%%%
@@ -569,7 +570,7 @@ Then the dimensionless propagators of boson and fermion as follows
 %
 %%%%
 \begin{align}
-G_b(q,m^2_b)&=\frac{1}{\tilde q_0^2+1+m^2_{b,k}}\,,\\[2ex]
+G_\phi(q,m^2_\phi)&=\frac{1}{\tilde q_0^2+1+m^2_{\phi,k}}\,,\\[2ex]
 G_q(q,m^2_q;\tilde \mu)&=\frac{1}{(\tilde q_0+i\tilde\mu)^2+1+m^2_{q,k}}\,.
 \end{align}
 %%%%
@@ -580,7 +581,7 @@ The threshold functions which are used in the flow equation of effective potenti
 %
 %%%%
 \begin{align}
-l_0^{(b,d)}(m^2_{b,k},\eta_{\phi,k};T)&=\frac{2}{d-1}\bigg(1-\frac{\eta_{\phi,k}}{d+1}\bigg)\mathcal{B}_{(1)}(m^2_{b,k};T)\,,\\[2ex]
+l_0^{(\phi,d)}(m^2_{b,k},\eta_{\phi,k};T)&=\frac{2}{d-1}\bigg(1-\frac{\eta_{\phi,k}}{d+1}\bigg)\mathcal{B}_{(1)}(m^2_{b,k};T)\,,\\[2ex]
 l_0^{(q,d)}(m^2_{q,k},\eta_{q,k};T,\mu)&=\frac{2}{d-1}\bigg(1-\frac{\eta_{q,k}}{d}\bigg)\mathcal{F}_{(1)}(m^2_{q,k};T,\mu)\,.
 \end{align}
 %%%%
@@ -589,7 +590,7 @@ In the computation we use $d=4$ and $\eta_{q,k}=0$. The definition of the boson 
 %
 %%%%
 \begin{align}
-\mathcal{B}_{n}(m^2_{b,k},T)&=\frac{T}{k}\sum_{n_0}\Big(G_b(q,m^2_{b,k})\Big)^n\,,\\[2ex]
+\mathcal{B}_{n}(m^2_{\phi,k},T)&=\frac{T}{k}\sum_{n_0}\Big(G_\phi(q,m^2_{\phi,k})\Big)^n\,,\\[2ex]
 \mathcal{F}_{n}(m^2_{q,k},T,\mu)&=\frac{T}{k}\sum_{n_0}\Big(G_q(q,m^2_{q,k})\Big)^n\,.
 \end{align}
 %%%%
@@ -598,7 +599,7 @@ The lowest order of the functions are given by
 %
 %%%%
 \begin{align}
-\mathcal{B}_{(1)}(m^2_{b,k},T)&=\frac{1}{\sqrt{1+m^2_{b,k}}}\bigg(\frac{1}{2}+n_b(m^2_{b,k},T)\bigg)\,,\\[2ex]
+\mathcal{B}_{(1)}(m^2_{\phi,k},T)&=\frac{1}{\sqrt{1+m^2_{\phi,k}}}\bigg(\frac{1}{2}+n_b(m^2_{\phi,k},T)\bigg)\,,\\[2ex]
 \mathcal{F}_{(1)}(m^2_{q,k};T,\mu)&=\frac{1}{2\sqrt{1+m^2_{q,k}}}\\
 \times\bigg(1-&n_q(m^2_{q,k};T,\mu)-n_q(m^2_{q,k};T,-\mu)\bigg)\,.
 \end{align}
@@ -608,7 +609,7 @@ The definitions of the boson and fermion distribution functions are
 %
 %%%%
 \begin{align}
-n_b(m^2_{b,k};T)&=\frac{1}{\mathrm{exp}\Big[\frac{k\sqrt{1+m^2_{b,k}}}{T}\Big]-1}\,,\\[2ex]
+n_b(m^2_{\phi,k};T)&=\frac{1}{\mathrm{exp}\Big[\frac{k\sqrt{1+m^2_{\phi,k}}}{T}\Big]-1}\,,\\[2ex]
 n_q(m^2_{q,k};T,\pm\mu)&=\frac{1}{\mathrm{exp}\Big[\frac{k\sqrt{1+m^2_{q,k}}\mp\mu}{T}\Big]+1}\,.
 \end{align}
 %%%%
@@ -644,7 +645,7 @@ The lowest order of the function is
 \end{align}
 %%%%
 %
-The higher order of the threshold functions can be obtained by the derivative of the first order of the function with respect to the masses. For example
+The $m_{b_1}$ and $m_{b_2}$ give us different meson masses. The higher order of the threshold functions can be obtained by the derivative of the first order of the function with respect to the masses. For example
 %
 %%%%
 \begin{align}
