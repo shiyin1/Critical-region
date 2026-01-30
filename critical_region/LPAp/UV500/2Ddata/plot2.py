@@ -15,7 +15,7 @@ mpl.style.use('classic')
 delta0p01=np.loadtxt('./delta0p01.dat')
 delta0p02=np.loadtxt('./delta0p02.dat')
 delta0p03=np.loadtxt('./delta0p03.dat')
-mub=[0,100,200,300,400,450,500,530]
+mub=[0,50,100,150,200,250,300,350,400,450,475,500,530]
 # Create figure
 fig=plt.figure(figsize=(4.5, 3.5))
 #fig=plt.figure()

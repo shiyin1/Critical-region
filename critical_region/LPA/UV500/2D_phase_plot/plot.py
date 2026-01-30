@@ -12,31 +12,28 @@ mpl.style.use('classic')
 
 # Data for plotting
 #T=np.loadtxt('Tem1/buffer/TMeV.dat')
-beta0p36=np.loadtxt('./beta0p36_fit.dat')
-beta0p37=np.loadtxt('./beta0p37_fit.dat')
-beta0p38=np.loadtxt('./beta0p38_fit.dat')
-nu0p01=np.loadtxt('./nu0p01_fit.dat')
-nu0p02=np.loadtxt('./nu0p02_fit.dat')
-nu0p03=np.loadtxt('./nu0p03_fit.dat')
-pb=np.loadtxt('./pb.dat')
+beta0p36=np.loadtxt('./beta0p36.dat')
+beta0p37=np.loadtxt('./beta0p37.dat')
+beta0p38=np.loadtxt('./beta0p38.dat')
+mubbeta=[0,50,100,150,200,250,300,350,400,450,500,550,575,600]
 
+nu0p01=np.loadtxt('./nu0p01.dat')
+nu0p02=np.loadtxt('./nu0p02.dat')
+nu0p03=np.loadtxt('./nu0p03.dat')
+mubnu=[0,50,100,150,200,250,300,350,400,450,500,550,575,600]
+
+pb=np.loadtxt('./pb.dat')
 pb2nd=np.loadtxt('./pb2nd.dat')
 # Create figure
 fig=plt.figure(figsize=(4.5, 3.5))
 #fig=plt.figure()
 ax1=fig.add_subplot(111)
-ax1.plot(pb[:,0],nu0p01,'-',c='#206FB6',linewidth=.5,alpha=1.,label=r'$\mathrm{Slope\;of\;correlation\;length}=\pm 1\%\nu$')
-ax1.plot(pb[:,0],nu0p02,'-',c='#6BADD7',linewidth=.5,alpha=1.,label=r'$\mathrm{Slope\;of\;correlation\;length}=\pm 2\%\nu$')
-ax1.plot(pb[:,0],nu0p03,'-',c='#C5DAEE',linewidth=.5,alpha=1.,label=r'$\mathrm{Slope\;of\;correlation\;length}=\pm 3\%\nu$')
-ax1.plot(pb[:,0],beta0p36,'-',c='#FDDFD0',linewidth=.5,alpha=1.,label=r'$\mathrm{Slope\;of\;order\;parameter}=0.36$')
-ax1.plot(pb[:,0],beta0p37,'-',c='#FC9171',linewidth=.5,alpha=1.,label=r'$\mathrm{Slope\;of\;order\;parameter}=0.37$')
-ax1.plot(pb[:,0],beta0p38,'-',c='#EE3B2A',linewidth=.5,alpha=1.,label=r'$\mathrm{Slope\;of\;order\;parameter}=0.38$')
-# ax1.fill_between(pb[:,0],pb[:,1],beta0p36,color='gray',edgecolor='none',alpha=0.3)
-# ax1.fill_between(pb[:,0],pb[:,1],beta0p37,color='gray',edgecolor='none',alpha=0.3)
-# ax1.fill_between(pb[:,0],pb[:,1],beta0p38,color='gray',edgecolor='none',alpha=0.3)
-# ax1.fill_between(pb[:,0],pb[:,1],nu0p01,color='gray',edgecolor='none',alpha=0.3)
-# ax1.fill_between(pb[:,0],pb[:,1],nu0p02,color='gray',edgecolor='none',alpha=0.3)
-# ax1.fill_between(pb[:,0],pb[:,1],nu0p03,color='gray',edgecolor='none',alpha=0.3)
+ax1.plot(mubnu,nu0p01,'-',c='#206FB6',linewidth=.5,alpha=1.,label=r'$\mathrm{Slope\;of\;correlation\;length}=\pm 1\%\nu$')
+ax1.plot(mubnu,nu0p02,'-',c='#6BADD7',linewidth=.5,alpha=1.,label=r'$\mathrm{Slope\;of\;correlation\;length}=\pm 2\%\nu$')
+ax1.plot(mubnu,nu0p03,'-',c='#C5DAEE',linewidth=.5,alpha=1.,label=r'$\mathrm{Slope\;of\;correlation\;length}=\pm 3\%\nu$')
+ax1.plot(mubbeta,beta0p36,'-',c='#FDDFD0',linewidth=.5,alpha=1.,label=r'$\mathrm{Slope\;of\;order\;parameter}=0.36$')
+ax1.plot(mubbeta,beta0p37,'-',c='#FC9171',linewidth=.5,alpha=1.,label=r'$\mathrm{Slope\;of\;order\;parameter}=0.37$')
+ax1.plot(mubbeta,beta0p38,'-',c='#EE3B2A',linewidth=.5,alpha=1.,label=r'$\mathrm{Slope\;of\;order\;parameter}=0.38$')
 ax1.fill_betweenx([0,200],[600,600],[1000,1000],color='gray',edgecolor='none',alpha=0.3,zorder=10)
 ax1.plot(pb2nd[:,0],pb2nd[:,1]-0.5,'-',c='k',linewidth=1.5,alpha=1.,label=r'$\mathrm{2nd-Phase\;boundary}$')
 #ax1.set_xscale('log')
@@ -54,4 +51,4 @@ for label in ax1.yaxis.get_ticklabels():
 
 fig.subplots_adjust(top=0.9, bottom=0.14, left=0.145, right=0.95, hspace=0.35,wspace=0.35)
 
-fig.savefig("beta_phase.pdf")
+fig.savefig("beta_nu_phase_LPA.pdf")

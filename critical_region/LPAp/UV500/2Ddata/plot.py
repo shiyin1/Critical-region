@@ -21,7 +21,7 @@ nu0p03=np.loadtxt('./nu0p03.dat')
 #pb=np.loadtxt('./pb.dat')
 
 pb2nd=np.loadtxt('./pb.dat')
-mub=[0,100,200,300,400,450,500,530]
+mub=[0,50,100,150,200,250,300,350,400,450,475,500,530]
 # Create figure
 fig=plt.figure(figsize=(4.5, 3.5))
 #fig=plt.figure()

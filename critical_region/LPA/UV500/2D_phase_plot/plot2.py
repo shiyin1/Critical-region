@@ -15,14 +15,14 @@ mpl.style.use('classic')
 delta0p01=np.loadtxt('./delta0p01.dat')
 delta0p02=np.loadtxt('./delta0p02.dat')
 delta0p03=np.loadtxt('./delta0p03.dat')
-mub=[0,300,400,500,550,575,600]
+mub=[0,50,100,150,200,250,300,350,400,450,500,550,575,600]
 # Create figure
 fig=plt.figure(figsize=(4.5, 3.5))
 #fig=plt.figure()
 ax1=fig.add_subplot(111)
-ax1.plot(mub,delta0p01,'-',c='#206FB6',linewidth=1.5,alpha=1.,label=r'$\mathrm{Slope\;of\;}m_\pi=\pm 1\%\delta$')
-ax1.plot(mub,delta0p02,'-',c='#6BADD7',linewidth=1.5,alpha=1.,label=r'$\mathrm{Slope\;of\;}m_\pi=\pm 2\%\delta$')
-ax1.plot(mub,delta0p03,'-',c='#C5DAEE',linewidth=1.5,alpha=1.,label=r'$\mathrm{Slope\;of\;}m_\pi=\pm 3\%\delta$')
+ax1.plot(mub,delta0p01,'-',c='#206FB6',linewidth=1.5,alpha=1.,label=r'$\mathrm{Slope\;of\;order\;parameter}=\pm 1\%\delta$')
+ax1.plot(mub,delta0p02,'-',c='#6BADD7',linewidth=1.5,alpha=1.,label=r'$\mathrm{Slope\;of\;order\;parameter}=\pm 2\%\delta$')
+ax1.plot(mub,delta0p03,'-',c='#C5DAEE',linewidth=1.5,alpha=1.,label=r'$\mathrm{Slope\;of\;order\;parameter}=\pm 3\%\delta$')
 # ax1.fill_between(pb[:,0],pb[:,1],beta0p36,color='gray',edgecolor='none',alpha=0.3)
 # ax1.fill_between(pb[:,0],pb[:,1],beta0p37,color='gray',edgecolor='none',alpha=0.3)
 # ax1.fill_between(pb[:,0],pb[:,1],beta0p38,color='gray',edgecolor='none',alpha=0.3)
