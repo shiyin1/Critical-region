@@ -4,10 +4,10 @@ rm *.mod
 rm *.o
 rm *.out
 rm eqcd
-cd BUFFER
-rm *.DAT
-rm *.dat
-cd ..
+#cd BUFFER
+#rm *.DAT
+#rm *.dat
+#cd ..
 make
 rm *.o
 rm *.mod
