@@ -39,12 +39,12 @@ program QM
 
   muBi=0.Q+0/hc
   
-  open(unit=11,file='m1.dat')
-  read(11,*) j1
-  close (11)
-  write(*,*)'load OK',j1
+  ! open(unit=11,file='m1.dat')
+  ! read(11,*) j1
+  ! close (11)
+  ! write(*,*)'load OK',j1
 
-  j=j1
+  ! j=j1
 
   sigma_UV=100.Q+0/hc
   kappa_UV_i=sigma_UV**2/2.Q+0
@@ -52,9 +52,9 @@ program QM
   l_i=1.Q+0
   lb_i=1.Q+0
 
-  do i=1,iTmax
+  do i=1,1!iTmax
     T_MeV=real(i,kind=16)
-    cl=8.Q-6/hc**3
+    !cl=8.Q-6/hc**3
     T=T_MeV/hc
     
     muB=muBi+real(j,kind=16)*11.Q+00/hc
